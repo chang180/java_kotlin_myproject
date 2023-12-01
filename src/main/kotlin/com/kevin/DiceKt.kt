@@ -1,6 +1,6 @@
 package com.kevin
 
-class Dice {
+class DiceKt {
     var max: Int = 6;
     var point: Int = 1;
 }
