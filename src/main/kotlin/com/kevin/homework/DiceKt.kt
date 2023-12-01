@@ -1,4 +1,4 @@
-package com.kevin
+package com.kevin.homework
 
 class DiceKt {
     var max: Int = 6;

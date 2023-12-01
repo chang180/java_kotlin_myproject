@@ -3,9 +3,15 @@ package com.kevin
 fun main() {
 //    println("Hello Kotlin")
 //    Human().hello()
-    val h = Human("John doe",66.5f, 1.7f)
+    val h = Human(weight = 66.5f, height = 1.7f)
 //    h.hello()
     println(h.bmi())
+
+    val score = 88
+    println(score > 60)
+    val c : Char = 'A'
+    println(c > 60.toChar())
+
     /*var age = 19
     var myself = '我'
     age = 20
@@ -16,11 +22,13 @@ fun main() {
 
 }
 
-class Human(var name: String = "", var weight: Float, var height: Float) {
-
+class Human(private var name: String = "", private var weight: Float, private var height: Float) {
+    init {
+        println("test $weight")
+    }
+//    constructor(weight: Float, height: Float) : this(weight, height)
     fun bmi(): Float {
-        val bmi = weight / (height * height)
-        return bmi
+        return weight / (height * height)
     }
     fun hello() {
         println("Hello Kotlin")

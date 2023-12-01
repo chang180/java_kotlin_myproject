@@ -1,4 +1,4 @@
-package com.kevin;
+package com.kevin.homework;
 
 public class Dice {
     int max = 6;
