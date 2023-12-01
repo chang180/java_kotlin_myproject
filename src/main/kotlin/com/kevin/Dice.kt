@@ -1,6 +1,6 @@
 package com.kevin
 
 class Dice {
-    var max: int = 6;
-    var point: int = 1;
+    var max: Int = 6;
+    var point: Int = 1;
 }
