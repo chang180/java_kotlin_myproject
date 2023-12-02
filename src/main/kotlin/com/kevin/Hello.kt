@@ -1,8 +1,13 @@
 package com.kevin
 
 fun main() {
-//    println("Hello Kotlin")
-//    Human().hello()
+    var s:String? = "abcde"
+    s = null
+    println(s?.length)
+    println(s?.get(3))
+    println(s?.substring(3))
+    println(s?.substring(3, 4))
+
     val h = Human(weight = 66.5f, height = 1.7f)
 //    h.hello()
     println(h.bmi())

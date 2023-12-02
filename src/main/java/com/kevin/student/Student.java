@@ -13,15 +13,19 @@ public class Student {
     }
 
     public void print() {
-        System.out.println(name + "\t" + english + "\t" + math + "\t" +  (english+math)/2);
+        System.out.print(name + "\t" + english + "\t" + math + "\t" + getAverage());
+        if (getAverage() >= 60) {
+            System.out.println("\tPASS");
+        } else {
+            System.out.println("\tFAILED");
+        }
+    }
+
+    public int getAverage() {
+        return (int) Math.floor((double)(english + math) / 2);
     }
 
     public int highest() {
         return Math.max(english, math);
-//        if (english > math) {
-//            return english;
-//        } else {
-//            return math;
-//        }
     }
 }
