@@ -2,9 +2,10 @@ package com.kevin.student;
 
 public class Student {
     String id;
-    String name;
-    int english;
-    int math;
+    public String name;
+    public int english;
+    public int math;
+    static int pass = 60;
 
     public Student(String name, int english, int math) {
         this.name = name;
@@ -18,7 +19,7 @@ public class Student {
         System.out.println(name + "\t" + english +
                 "\t" + math +
                 "\t" + getAverage() + "\t" +
-//                ((average >= 60) ? "PASS" : "FAILED")
+                ((average >= pass) ? "PASS" : "FAILED") + "\t" +
                 ( switch (average / 10) {
                     case 10, 9 -> "A";
                     case 8, 7 -> "B";

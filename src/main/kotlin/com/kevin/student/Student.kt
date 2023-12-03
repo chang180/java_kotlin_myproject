@@ -4,14 +4,26 @@ import java.util.*
 
 fun main() {
 //    userInput()
-    val stu = Student("Kevin", 77, 88);
+    Student.pass = 55
+    val stu = Student("Kevin", 44, 66);
+    val stu2 = Student("Hank", 100, 100);
+    val stu3 = Student("Jane", 30, 50);
     stu.print();
+    stu2.print();
+    stu3.print();
 //    var test = 123
 //    println("Test is ${test}")
     println("High score: ${stu.highest()}")
 }
 
 class Student(var name: String?, var english: Int, var math: Int) {
+    companion object {
+        @JvmStatic  // 這個 annotation 可以讓 Java 程式碼呼叫 Kotlin 的 static method
+        var pass = 60
+        fun test() {
+            println("testing")
+        }
+    }
     fun print() {
 //        print(
 //            name + "\t" + english + "\t" + math +
@@ -24,7 +36,7 @@ class Student(var name: String?, var english: Int, var math: Int) {
         )
     }
 
-    private fun passOrFailed() = if (getAverage() >= 60) "PASS" else "FAILED"
+    private fun passOrFailed() = if (getAverage() >= pass) "PASS" else "FAILED"
 
     fun grading(): Char = when (getAverage()) {
         in 90..100 -> 'A'
