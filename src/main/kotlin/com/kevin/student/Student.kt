@@ -11,12 +11,27 @@ fun main() {
     stu.print();
     stu2.print();
     stu3.print();
+    val gstu = GraduateStudent("Jack", 55, 65, 60);
+    gstu.print();
 //    var test = 123
 //    println("Test is ${test}")
     println("High score: ${stu.highest()}")
 }
 
-class Student(var name: String?, var english: Int, var math: Int) {
+class GraduateStudent(name: String?, english: Int, math: Int, private var thesis: Int) : Student(name, english, math) {
+    companion object {
+        var pass = 70
+    }
+    override fun print() {
+        println(
+            "$name\t$english\t$math\t$thesis\t${getAverage()}\t${passOrFailed()}\t${grading()}"
+        )
+    }
+
+    override fun passOrFailed() = if (getAverage() >= pass) "PASS" else "FAILED"
+}
+
+open class Student(var name: String?, var english: Int, var math: Int) {
     companion object {
         @JvmStatic  // 這個 annotation 可以讓 Java 程式碼呼叫 Kotlin 的 static method
         var pass = 60
@@ -24,7 +39,7 @@ class Student(var name: String?, var english: Int, var math: Int) {
             println("testing")
         }
     }
-    fun print() {
+    open fun print() {
 //        print(
 //            name + "\t" + english + "\t" + math +
 //                    "\t" + getAverage() + "\t" +
@@ -36,9 +51,9 @@ class Student(var name: String?, var english: Int, var math: Int) {
         )
     }
 
-    private fun passOrFailed() = if (getAverage() >= pass) "PASS" else "FAILED"
+    open fun passOrFailed() = if (getAverage() >= pass) "PASS" else "FAILED"
 
-    fun grading(): Char = when (getAverage()) {
+    internal fun grading(): Char = when (getAverage()) {
         in 90..100 -> 'A'
         in 80..89 -> 'B'
         in 70..79 -> 'C'

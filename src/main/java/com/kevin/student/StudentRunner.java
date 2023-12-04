@@ -13,6 +13,8 @@ public class StudentRunner {
         stu.print();
         stu2.print();
         stu3.print();
+        GraduateStudent gstu = new GraduateStudent("Jack", 55, 65, 60);
+        gstu.print();
         System.out.println("High score: " + stu.highest());
     }
 

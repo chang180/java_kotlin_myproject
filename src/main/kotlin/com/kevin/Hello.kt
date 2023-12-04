@@ -1,6 +1,11 @@
 package com.kevin
 
+import com.kevin.kotlin.Student
+
 fun main() {
+    val stu = Student("Kevin", 44, 66)
+    stu.grading() // 這個 method 是 internal，所以只能在同一個 module 內呼叫
+
     var s:String? = "abcde"
     s = null
     println(s?.length)

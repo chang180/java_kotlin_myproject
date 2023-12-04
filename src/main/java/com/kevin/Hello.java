@@ -1,8 +1,18 @@
 package com.kevin;
 
+import com.kevin.student.Student;
+
 public class Hello {
     public static void main(String[] args) {
+        Student stu = new Student("Kevin", 77, 99);
+//        stu.highest(); // 設定為public後，可以在不同package中使用
+        stu.print();
 //        System.out.println("Hello world");
+
+        com.kevin.kotlin.Student stu2 = new com.kevin.kotlin.Student("Hank", 60, 40);
+        stu2.print(); // kotlin預設為public，所以可以在不同package中使用
+
+
         String s = "abcde";
         System.out.println(s.charAt(3));
         System.out.println(s.substring(1, 4));
